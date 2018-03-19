@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+section{
+	max-width:1200px;
+    margin: auto;
+    padding: 10px;
+	font-family: 'Verdana';
+	font-size: 20px;
+	font-color:'black';
+	background-image: url("contact.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+body{
+	background-image: url("contact.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+	padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+span{
+	padding-top:20px;
+}
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.dropdown .dropbtn {
+    font-size: 14px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 16px;
+    background-color: inherit;
+}
+
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.container {
+    border-radius: 5px;
+    background-color: #303030;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<nav class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+    <div class="dropdown">
+    <button class="dropbtn">About Odisha</button>
+      <div class="dropdown-content">
+	  <button class="accordion">Who is who?</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=node/172">Minister Tourism</a>
+			<a href="http://www.odishatourism.gov.in/?q=node/173">Senior Officials</a>
+		</div>	
+		<a href="http://www.odishatourism.gov.in/?q=node/25">Organogram</a>
+		<a href="http://www.odishatourism.gov.in/?q=node/26">Mission & Vision</a>
+    </div>
+	</div>
+	<div class="dropdown">
+	<button class="dropbtn">Art & Culture</button>
+      <div class="dropdown-content">
+	  <button class="accordion">Temple & Monuments</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=hindu-temple">Temples</a>
+			<a href="http://www.odishatourism.gov.in/?q=buddhist-monument">Buddhist Monuments</a>
+			<a href="http://www.odishatourism.gov.in/?q=jain-monument">Jain Monuments</a>
+		</div>	
+		<a href="http://www.odishatourism.gov.in/?q=node/27">Handicraft</a>
+		<button class="accordion">Fairs & Festivals</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=department-organised-festival">Department Festivals</a>
+			<a href="http://www.odishatourism.gov.in/?q=traditional-festival">Traditional Festivals</a>
+		</div>	
+    </div>
+  </div> 
+  	<div class="dropdown">
+	<button class="dropbtn">Nature</button>
+      <div class="dropdown-content">
+		<a href="http://www.odishatourism.gov.in/?q=view-wildlife">Wildlife</a>
+		<a href="http://www.odishatourism.gov.in/?q=beaches">Beaches</a>
+		<a href="http://www.odishatourism.gov.in/?q=lakes">Lakes</a>
+		<a href="http://www.odishatourism.gov.in/?q=waterfalls">Waterfalls</a>
+    </div>
+  </div> 
+  	<div class="dropdown">
+	<button class="dropbtn">Destination Places</button>
+      <div class="dropdown-content">
+		<a href="http://www.orissatourism.org/travel-to-orissa/puri/index.html">In Puri</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/konark/index.html">In Konark</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/bhubaneshwar/index.html">In Bhubaneswar</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/cuttack/index.html">In Cuttack</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/sambalpur/index.html">In Sambalpur</a>
+    </div>
+  </div> 
+  <a href="imagegalary.html" class="w3-button w3-bar-item">Image Galary</a>
+  <a href="#archives" class="w3-button w3-bar-item">Archives</a>
+  <a href="contact.html" class="w3-button w3-bar-item">Contact Us</a>
+</nav>
+<section>
+  <article class="w3-third">
+    <p><font color="white">Rajrana Music Fest 2017</font></p>
+    <img src="img1.jpg" alt="Random Name" style="width:100%">
+  </article>
+  <article class="w3-third">
+    <p><font color="white">Sandart Exhibition</font></p>
+    <img src="img2.jpg" alt="Random Name" style="width:100%">
+  </article>
+    <article class="w3-third">
+    <p><font color="white">Odissi Music Fest</font></p>
+    <img src="img3.jpg" alt="Random Name" style="width:100%">
+  </article>
+    <article class="w3-third">
+    <p><font color="white">Mukteswar Dance Fest 2017</font></p>
+    <img src="img4.jpg" alt="Random Name" style="width:100%">
+  </article>
+    <article class="w3-third">
+    <p><font color="white">Rajrani Music Fest</font></p>
+    <img src="img5.jpg" alt="Random Name" style="width:100%">
+  </article>
+  <article class="w3-third">
+    <p><font color="white">Rajrana Music Fest 2016</font></p>
+   <img src="img6.jpg" alt="Random Name" style="width:100%">
+  </article>
+  <article class="w3-third">
+    <p><font color="white">Signing Of MOA with Japan</font></p>
+    <img src="img7.jpg" alt="Random Name" style="width:100%">
+  </article>
+    <article class="w3-third">
+    <p><font color="white">Sand Sculpture</font></p>
+    <img src="img8.jpg" alt="Random Name" style="width:100%">
+  </article>
+    <article class="w3-third">
+    <p><font color="white">Mukteswar Dance Fest 2016</font></p>
+    <img src="img9.jpg" alt="Random Name" style="width:100%">
+  </article>
+</section>
+
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-flickr"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <p class="w3-medium">
+  Powered by <a href="#" target="_blank">Odisha Tourism</a>
+  </p>
+</footer>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</body>
+</html>

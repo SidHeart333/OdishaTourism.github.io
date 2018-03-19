@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+    <div class="dropdown">
+    <button class="dropbtn">About Odisha</button>
+      <div class="dropdown-content">
+	  <button class="accordion">Who is who?</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=node/172">Minister Tourism</a>
+			<a href="http://www.odishatourism.gov.in/?q=node/173">Senior Officials</a>
+		</div>	
+		<a href="http://www.odishatourism.gov.in/?q=node/25">Organogram</a>
+		<a href="http://www.odishatourism.gov.in/?q=node/26">Mission & Vision</a>
+    </div>
+	</div>
+	<div class="dropdown">
+	<button class="dropbtn">Art & Culture</button>
+      <div class="dropdown-content">
+	  <button class="accordion">Temple & Monuments</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=hindu-temple">Temples</a>
+			<a href="http://www.odishatourism.gov.in/?q=buddhist-monument">Buddhist Monuments</a>
+			<a href="http://www.odishatourism.gov.in/?q=jain-monument">Jain Monuments</a>
+		</div>	
+		<a href="http://www.odishatourism.gov.in/?q=node/27">Handicraft</a>
+		<button class="accordion">Fairs & Festivals</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=department-organised-festival">Department Festivals</a>
+			<a href="http://www.odishatourism.gov.in/?q=traditional-festival">Traditional Festivals</a>
+		</div>	
+    </div>
+  </div> 
+  	<div class="dropdown">
+	<button class="dropbtn">Nature</button>
+      <div class="dropdown-content">
+		<a href="http://www.odishatourism.gov.in/?q=view-wildlife">Wildlife</a>
+		<a href="http://www.odishatourism.gov.in/?q=beaches">Beaches</a>
+		<a href="http://www.odishatourism.gov.in/?q=lakes">Lakes</a>
+		<a href="http://www.odishatourism.gov.in/?q=waterfalls">Waterfalls</a>
+    </div>
+  </div> 
+  	<div class="dropdown">
+	<button class="dropbtn">Destination Places</button>
+      <div class="dropdown-content">
+		<a href="http://www.orissatourism.org/travel-to-orissa/puri/index.html">In Puri</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/konark/index.html">In Konark</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/bhubaneshwar/index.html">In Bhubaneswar</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/cuttack/index.html">In Cuttack</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/sambalpur/index.html">In Sambalpur</a>
+    </div>
+  </div> 
+  <a href="imagegalary.html" class="w3-button w3-bar-item">Image Galary</a>
+  <a href="#archives" class="w3-button w3-bar-item">Archives</a>
+  <a href="contact.html" class="w3-button w3-bar-item">Contact Us</a>
+</nav>
+<section>
+<center>
+<font color ="white">
+<h1><u><font color="#E7921D">Bhubaneswar Office</font></u></h1>
+<pre>C-41, Market Building, Sahid Nagar,
+Bhubaneswar - 751007, Odisha(Orissa), India.
+Mob : +91 - 9937373263
+Email : <font color="#E7921D">booking@orissatourism.org</font></pre>
+
+<h1><u><font color="#E7921D">Delhi Office</font></u></h1>
+<pre><h3><font color="#FEBC41">Orissa Tourist Office</font></h3>,
+3rd floor, B/4, Orissa Emporium,
+Baba Kharag Sing Marg, C.P. ,
+New Delhi – 110001, India.
+Email : <font color="#E7921D">booking@orissatourism.org</font></pre>
+</center>
+<h2><center><font color="#E7921D">Contact Form</font></center></h2>
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Your name..">
+
+    <label for="lname">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email..">
+	
+	<label for="lname">Contact No.</label>
+    <input type="text" id="number" name="no" placeholder="Your Contact no..">
+	
+    <label for="no_of_people">No. of People</label>
+    <select id="no_of_people" name="no_of_people">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+	  <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="more">More Than 5</option>
+    </select>
+	
+	<label for="country">Country</label>
+    <input type="text" id="country" name="country" placeholder="Your Country..">
+	
+	<label for="city">City</label>
+    <input type="text" id="city" name="city" placeholder="Your City..">
+	
+    <label for="subject">Travel Requirements</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+	
+    <center><input type="submit" value="Submit Query"></center>
+  </form>
+  </font>
+</div>
+</section>
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-flickr"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <p class="w3-medium">
+  Powered by <a href="#" target="_blank">Odisha Tourism</a>
+  </p>
+</footer>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+</body>
+</html>

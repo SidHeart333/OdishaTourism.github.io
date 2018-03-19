@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.parallax {
+    background-image: url("cl5.jpg");
+    min-height: 600px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+header{
+	background-image: url("header.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+	padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 14px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 16px;
+    background-color: inherit;
+}
+
+.container a:hover{
+    background-color: #505050;
+}
+.dropdown:hover .dropbtn{
+	background-color: red;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.signup{
+	float:right;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.footer .contain{
+	float:left;
+	margin-left:100px;
+	margin-top:50px;
+	
+}
+.container {
+    border-radius: 5px;
+    background-color: #303030;
+    padding: 20px;
+}
+</style>
+<style>
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14x 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.login{
+    width: 100%;
+    padding: 14px 20px;
+	background-color: #4CAF50;
+}
+.signupbut{
+    width: auto;
+    padding: 14px 20px;
+	background-color: #4CAF50;
+}
+.cancelbut, .cancelbtn{
+    width: auto;
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+.cancelbut,.signupbut {float:left;width:50%}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #303030;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<style>
+#loader {
+  background-color: #333333;
+  min-height:700px;
+  position: relative;
+  padding-left: 600px;
+  padding-top: 300px;
+  z-index: 1000;
+}
+#myDiv {
+  display:none;
+  text-align: center;
+}
+</style>
+</head>
+<body  onload="myFunction()" style="margin:0;">
+<!--div id="loader"></div-->
+<div id="loader">
+<img src="spiral.gif">
+</div>
+<div style="display:none;" id="myDiv" class="w3-animate-opacity">
+<!-- Navigation -->
+<header class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    <h1>Odisha Tourism</h1>
+    <h3>Incredible India</h3>
+    <p>Kuch Din Toh Guzaro Odisha Main</p>
+  </header>
+<nav class="w3-bar w3-black">
+  <a href="index.html" class="w3-button w3-bar-item">Home</a>
+    <div class="dropdown">
+    <button class="dropbtn">About Odisha</button>
+      <div class="dropdown-content">
+	  <button class="accordion">Who is who?</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=node/172">Minister Tourism</a>
+			<a href="http://www.odishatourism.gov.in/?q=node/173">Senior Officials</a>
+		</div>	
+		<a href="http://www.odishatourism.gov.in/?q=node/25">Organogram</a>
+		<a href="http://www.odishatourism.gov.in/?q=node/26">Mission & Vision</a>
+    </div>
+	</div>
+	<div class="dropdown">
+	<button class="dropbtn">Art & Culture</button>
+      <div class="dropdown-content">
+	  <button class="accordion">Temple & Monuments</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=hindu-temple">Temples</a>
+			<a href="http://www.odishatourism.gov.in/?q=buddhist-monument">Buddhist Monuments</a>
+			<a href="http://www.odishatourism.gov.in/?q=jain-monument">Jain Monuments</a>
+		</div>	
+		<a href="http://www.odishatourism.gov.in/?q=node/27">Handicraft</a>
+		<button class="accordion">Fairs & Festivals</button>
+		<div class="panel">
+			<a href="http://www.odishatourism.gov.in/?q=department-organised-festival">Department Festivals</a>
+			<a href="http://www.odishatourism.gov.in/?q=traditional-festival">Traditional Festivals</a>
+		</div>	
+    </div>
+  </div> 
+  	<div class="dropdown">
+	<button class="dropbtn">Nature</button>
+      <div class="dropdown-content">
+		<a href="http://www.odishatourism.gov.in/?q=view-wildlife">Wildlife</a>
+		<a href="http://www.odishatourism.gov.in/?q=beaches">Beaches</a>
+		<a href="http://www.odishatourism.gov.in/?q=lakes">Lakes</a>
+		<a href="http://www.odishatourism.gov.in/?q=waterfalls">Waterfalls</a>
+    </div>
+  </div> 
+  	<div class="dropdown">
+	<button class="dropbtn">Destination Places</button>
+      <div class="dropdown-content">
+		<a href="http://www.orissatourism.org/travel-to-orissa/puri/index.html">In Puri</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/konark/index.html">In Konark</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/bhubaneshwar/index.html">In Bhubaneswar</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/cuttack/index.html">In Cuttack</a>
+		<a href="http://www.orissatourism.org/travel-to-orissa/sambalpur/index.html">In Sambalpur</a>
+    </div>
+  </div> 
+  <a href="imagegalary.html" class="w3-button w3-bar-item">Image Galary</a>
+  <a href="#archives" class="w3-button w3-bar-item">Archives</a>
+  <a href="contact.html" class="w3-button w3-bar-item">Contact Us</a>
+  <div class="signup">
+  <a href="#login+in" onclick="document.getElementById('id01').style.display='block'"style="width:auto;" id="signup" class="w3-button w3-bar-item">Login</a>
+  <a href="#sign+up" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" id="signup" class="w3-button w3-bar-item">Sign Up</a>
+  </div>
+</nav>
+
+<div id="id01" class="modal">
+  <font color=white>
+  <form class="modal-content animate" action="/action_page.php">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit" class="login">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+	
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+	  <span class="psw">Forgot <a href="#">password?</a><span>
+	  
+  </form>
+  </font>
+</div>
+
+<div id="id02" class="modal">
+<font color=white>
+  <form class="modal-content animate" action="/action_page.php">
+	<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+	  <p>By creating an account you agree to our <u>Terms & Privacy</u>.</p>
+      <div class="clearfix">
+        <button type="submit" class="signupbut">Sign Up</button>
+		<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbut">Cancel</button>
+      </div>
+    </div>
+  </form>
+  </font>
+</div>
+
+<div>
+  <img class="mySlides" src="people.jpg"
+  style="width:100%">
+  <img class="mySlides" src="beach.jpg"
+  style="width:100%">
+  <img class="mySlides" src="sandart.jpg"
+  style="width:100%">
+  <img class="mySlides" src="rathyatra.jpg"
+  style="width:100%">
+  <img class="mySlides" src="rowing.jpg"
+  style="width:100%">
+</div>
+
+<div class="w3-container w3-center w3-content" style="max-width:1000px">
+<font color="black">
+  <h2 class="w3-wide">Welcome To Odisha</h2>
+  <p class="w3-justify">There are some places in the India that are special, and Odisha (Orissa) tourism is definitely one of them. Filled with exquisite temples and extraordinary monuments, home to many thousands of prolific artists and craftsmen; and possessing beaches, wildlife sanctuaries, and natural landscape of often-enchanting beauty,Odisha (Orissa) tourism is a unique and fascinating land that is, nevertheless, still largely undiscovered by tourists.
+
+Tourism in Orissa (Odisha) India is a veritable museum of India's sculptural and artistic heritage and has long been famous to scholars and connoisseurs for the magnificent Sun Temple at Konark (The legendary 'Black Pagoda' of European mariners), for the majestic temple of Lord Jagannath at Puri (renowned for the spectacular Rath Yatra chariot festival), and for the glorious temples of Bhubaneswar. The small but ever-growing number of sophisticated tourists who do manage to find their way to Orissa (Odisha) tourism are generally prepared with some knowledge of these temples, Puri tourism, of the delicate Orissan ikat textiles which have been become famous throughout the world, and, perhaps, of the beaches at Puri and Gopalpur on sea.
+
+Odisha(Orissa) Travel Guide is as vivid as the experience of Orissa Travel & Tourism itself. The land of this East Indian state is known for holding uniqueness of culture and nature, making Orissa India Tourism worth thing to do. Go for an Odisha Tour and have a superb experience</p>
+  </font>
+</div>
+
+<div class="w3-row-padding w3-center parallax">
+  <article class="w3-third">
+    <p><font color="white">Puri</font></p>
+    <a href="http://www.orissatourism.org/travel-to-orissa/puri/index.html"><img src="banner.jpg" alt="Random Name" style="width:100%"></a>
+  </article>
+  <article class="w3-third">
+    <p><font color="white">Bhubaneswar</font></p>
+    <a href="http://www.orissatourism.org/travel-to-orissa/bhubaneshwar/index.html"><img src="maxresdefault.jpg" alt="Random Name" style="width:70%"></a>
+  </article>
+  <article class="w3-third">
+    <p><font color="white">Konark</font></p>
+    <a href="http://www.orissatourism.org/travel-to-orissa/konark/index.html"><img src="suntemple.jpg" alt="Random Name" style="width:100%"></a>
+  </article>
+    <article class="w3-half">
+    <p><font color="white">Chilika</font></p>
+    <a href="http://www.orissatourism.org/chilka-lake.html"><img src="chilika.jpg" alt="Random Name" style="width:55%"></a>
+  </article>
+    <article class="w3-half">
+    <p><font color="white">WildLife</font></p>
+    <a href="http://www.orissatourism.org/wildlife-in-orissa/bhitarkanika-national-park.html"><img src="wild.jpg" alt="Random Name" style="width:58%"></a>
+  </article>
+</div>
+
+<div class="w3-container w3-center w3-content" style="max-width:600px">
+  <h2 class="w3-wide">Odisha Tourism</h2>
+  <p class="w3-opacity"><i>Soul Of India</i></p>
+  <p class="w3-justify">Tourism in Odisha is one of the main contributors to the Economy of Odisha, India, with a 500 km (310 mi) long coastline, towering mountains, serene lakes and frolicking rivers. Odisha is one of the major tourism sectors of India, with various tourists' attractions, ranging from wildlife reserves, beaches, temples, monuments, the arts and festivals. Other than wildlife reserves, beaches, temples, monuments, the arts and festivals, the Odisha Tourism Development Corporation, a Public Sector Undertaking of Government of Odisha, is also developing tourism sector of Odisha and India.</p>
+</div>
+
+<footer class="footer contain">
+<font color="white">
+			<div class="container">
+				<div class="main-footer">
+					<div class="row">
+						<div class="contain">
+							<div class="footer-logo">
+								<a href="http://www.orissatourism.org/index.html"><img src="logo-white.png" alt="Logo" style="width:240px;"></a>
+								<br><br><br>
+							<p class="footer-address">C-41, Market Building, Sahid Nagar,<br>
+							Bhubaneswar - 751007, Odisha, India <br> 
+							<i class="fa fa-phone"></i> +91 9937373263<br>    
+							<i class="fa fa-envelope-o"></i> booking@orissatourism.org
+							</p>
+							</div>
+						   <div class="footer-social">
+								<a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+								<a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#" data-toggle="tooltip" data-placement="top" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+								<a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+							</div><br><br>
+							
+							<p class="copy-right"><font size="1px">© Copyright 2016 Orissatourism.org. All Rights Reserved</font></p>
+							<div class="contain"></div>
+						</div>
+								<div class="contain">
+									<h5><u>Featured Destinations</u></h5>
+									<a href="http://www.orissatourism.org/travel-to-orissa/puri/index.html">Puri Tourism</a><br>
+									<a href="http://www.orissatourism.org/travel-to-orissa/cuttack/index.html">Cuttack Tourism</a><br>
+									<a href="http://www.orissatourism.org/travel-to-orissa/konark/index.html">Konark Tourism</a><br>
+									<a href="http://www.orissatourism.org/travel-to-orissa/bhubaneshwar/index.html">Bhubaneswar Tourism</a><br>
+									<a href="http://www.orissatourism.org/travel-to-orissa/sambalpur/index.html">Sambalpur Tourism</a><br>
+								</div>
+								<div class="contain">
+									<h5><u>Featured Hotels</u></h5>
+									<a href="http://www.orissatourism.org/hotels-puri/toshali-sands.html">Toshali Sands Resort Puri</a><br>
+									<a href="http://www.orissatourism.org/hotel-paradeep/toshali-ratnagiri.html">Toshali Ratnagiri</a><br>
+									<a href="http://www.orissatourism.org/hotel-paradeep/toshali-pushpagiri.html">Toshali Pushpagiri</a><br>
+									<a href="http://www.orissatourism.org/hotel-paradeep/toshali-udayagiri.html">Toshali Udayagiri</a><br>
+								</div>
+								<div class="contain">
+									<h5><u>Contact Us</u></h5>
+										<a href="http://www.orissatourism.org/sitemap.html">Sitemap</a><br>
+										<a href="http://www.orissatourism.org/resources.html">Useful Links</a><br>
+								</div>	
+</font>								
+		</footer>
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 5000);
+}
+</script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</body>
+</html>
